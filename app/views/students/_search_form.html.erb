@@ -1,7 +1,8 @@
 <%= search_form_for(@q, url: search_path) do |f| %>
   <p>
     <%= f.label :department_id_eq, '学部' %>
-    <%= f.collection_select :department_id_eq, @departments, :id, :name, :include_blank => '指定なし' %>
+    <%= f.radio_button :department_id_eq, '', checked: true %>指定なし
+    <%= f.collection_radio_buttons :department_id_eq, @departments, :id, :name %>
   </p>
   <%= f.submit %>
 <% end %>
