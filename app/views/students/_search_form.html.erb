@@ -1,8 +1,9 @@
 <%= search_form_for(@q, url: search_path) do |f| %>
   <p>
-    <%= f.label :department_id_eq, '学部' %>
-    <%= f.radio_button :department_id_eq, '', checked: true %>指定なし
-    <%= f.collection_radio_buttons :department_id_eq, @departments, :id, :name %>
+    <%= f.label :age_gteq, '性別' %>
+    <%= f.radio_button :age_gteq, '', checked: true %>指定なし
+    <%= f.radio_button :age_gteq, '15' %>15歳以上
+    <%= f.radio_button :age_gteq, '20' %>20際以上
   </p>
   <%= f.submit %>
 <% end %>
