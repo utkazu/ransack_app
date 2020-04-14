@@ -5,12 +5,12 @@ class StudentsController < ApplicationController
   end
 
   def search
-    @q = Student.serch(search_params)
+    @q = Student.search(search_params)
     @students = @q.result.includes(:department, :subjects)
   end
 
   private
   def search_params
-    params.require(:q).permit!
+    params.require(:q).permit(:name_cont)
   end
 end

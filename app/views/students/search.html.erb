@@ -6,7 +6,7 @@
       <td><%= student.sex %></td>
       <td><%= student.age %></td>
       <td><%= student.department.name %></td>
-      <td><%= student.subjects.map{|subject_id| Subject.find(subject_id).name}.join(', ') %></td>
+      <td><%= student.subjects.map{|subject| Subject.find(subject.id).name}.join(', ') %></td>
     </tr>
   <% end %>
 </table>
