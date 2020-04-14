@@ -12,6 +12,6 @@ class StudentsController < ApplicationController
 
   private
   def search_params
-    params.require(:q).permit(:department_id_eq)
+    params.require(:q).permit(:age_gteq)
   end
 end
