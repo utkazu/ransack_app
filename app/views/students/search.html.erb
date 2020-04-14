@@ -1,2 +1,14 @@
-<h1>Students#search</h1>
-<p>Find me in app/views/students/search.html.erb</p>
+<h1>検索結果</h1>
+<table>
+  <% @students.each do |student| %>
+    <tr>
+      <td><%= student.name %></td>
+      <td><%= student.sex %></td>
+      <td><%= student.age %></td>
+      <td><%= student.department.name %></td>
+      <td><%= student.subjects.map{|subject_id| Subject.find(subject_id).name}.join(', ') %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'トップ', root_path %>
