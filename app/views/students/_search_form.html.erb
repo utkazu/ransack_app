@@ -1,9 +1,7 @@
 <%= search_form_for(@q, url: search_path) do |f| %>
   <p>
-    <%= f.label :age_gteq, '性別' %>
-    <%= f.radio_button :age_gteq, '', checked: true %>指定なし
-    <%= f.radio_button :age_gteq, '15' %>15歳以上
-    <%= f.radio_button :age_gteq, '20' %>20際以上
+    <%= f.label :subjects_id_in, '履修科目' %>
+    <%= f.collection_check_boxes :subjects_id_in, @subjects, :id, :name %>
   </p>
   <%= f.submit %>
 <% end %>
